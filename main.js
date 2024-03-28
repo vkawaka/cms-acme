@@ -2,8 +2,9 @@
 
 import { getFilmes, getFilme, postFilme, deleteFilme } from "./filmes.js"
 
-const createSpace = async(filme) =>{
+const createSpace = (filme) =>{
     const filmeE = document.createElement('div')
+    filmeE.classList.add('w-52', 'flex')
     const nome = document.createElement('p')
     nome.textContent = filme.nome
     console.log(filme.nome);
@@ -11,15 +12,17 @@ const createSpace = async(filme) =>{
     const deleteBtn = document.createElement('button')
     const editI = document.createElement('img')
     editI.src = './edit.png'
-    // editBtn.id = `edit${id}`
+    editI.classList.add('min-w-7', 'max-w-10')
+    editBtn.id = `edit${filme.id}`
     const deleteI = document.createElement('img')
     deleteI.src = './trash.png'
-    // deleteBtn.id = `trash${id}`
+    deleteI.classList.add('min-w-7', 'max-w-10')
+    deleteBtn.id = `trash${filme.id}`
     deleteBtn.append(deleteI)
     editBtn.append(editI)
 
 
-    filmeE.append(nome)
+    filmeE.append(nome, deleteBtn, editBtn)
 
     return filmeE
     
