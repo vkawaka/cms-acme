@@ -3,11 +3,16 @@
 import { getFilmes, getFilme, postFilme, deleteFilme } from "./filmes.js"
 
 const createSpace = (filme) =>{
-    const filmeE = document.createElement('div')
-    filmeE.classList.add('w-52', 'flex')
-    const nome = document.createElement('p')
+    const filmeE = document.createElement('tr')
+    const id = document.createElement('td')
+    id.textContent = filme.id
+    const nome = document.createElement('td')
     nome.textContent = filme.nome
     console.log(filme.nome);
+    const preco = document.createElement('td')
+    preco.textContent = `R$ ${filme.valor_unitario}`
+    const editT = document.createElement('td')
+    const deleteT = document.createElement('td')
     const editBtn = document.createElement('button')
     const deleteBtn = document.createElement('button')
     const editI = document.createElement('img')
@@ -20,22 +25,26 @@ const createSpace = (filme) =>{
     deleteBtn.id = `trash${filme.id}`
     deleteBtn.append(deleteI)
     editBtn.append(editI)
+    editT.append(editBtn)
+    deleteT.append(deleteBtn)
 
 
-    filmeE.append(nome, deleteBtn, editBtn)
+    filmeE.append(id, nome, preco, editT, deleteT)
+
+    console.log(filmeE);
 
     return filmeE
     
 }
 
 async function preencherTela(){
-    const container = document.getElementById('cont')
+    const table = document.getElementById('table')
 
     const filmes = await getFilmes()
     
     filmes.forEach(element => {
         const card = createSpace(element)
-        container.append(card)
+        table.append(card)
     })
 }
 

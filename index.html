@@ -7,17 +7,27 @@
     <script src="./main.js" type="module" defer></script>
     <title>ACME</title>
 </head>
-<body>
-    <header class="bg-sky-800 w-screen h-1/5">
+<body class="w-screen">
+    <header class="bg-sky-800 w-full h-[100px] fixed">
         <img src="Logo 1.svg" alt="" class="w-1/6 pt-8 pb-8 pl-16">
+        <button> <a href="./add-filme.html"> Adicionar Filme</a> </button>
     </header>
-    <main>
-       <table>
-        <th>
-            <th class="border">id</th>
-            <th>nome</th>
-        </th>
+    <main class="w-full flex items-center justify-center pt-[200px]">
+       <table id="table" style="width: 80%;">
+            <tr>
+                <th style="width: 10px;">id</th>
+                <th>nome</th>
+                <th>preço</th>
+                <th>editar</th>
+                <th>deletar</th>
+            </tr>  
        </table>
     </main>
 </body>
 </html>
+<style>
+    th, td{
+        border: 2px solid black;
+        padding: 8px;
+    }
+</style>
