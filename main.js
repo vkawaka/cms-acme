@@ -1,6 +1,6 @@
 'use strict'
 
-import { getFilmes, getFilme, postFilme, deleteFilme } from "./filmes.js"
+import { getFilmes, getFilme, deleteFilme } from "./filmes.js"
 
 const createSpace = (filme) =>{
     const filmeE = document.createElement('tr')
@@ -22,14 +22,19 @@ const createSpace = (filme) =>{
     const deleteI = document.createElement('img')
     deleteI.src = './trash.png'
     deleteI.classList.add('min-w-7', 'max-w-10')
+    deleteBtn.classList.add('w-full')
     deleteBtn.id = `trash${filme.id}`
     deleteBtn.append(deleteI)
     editBtn.append(editI)
     editT.append(editBtn)
     deleteT.append(deleteBtn)
 
-
     filmeE.append(id, nome, preco, editT, deleteT)
+
+    deleteBtn.addEventListener('click', function() {
+        deleteFilme(filme.id)
+        location.reload();
+    })
 
     console.log(filmeE);
 

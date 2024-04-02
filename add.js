@@ -33,6 +33,8 @@ function cadastrar(){
   
         postFilme(novoFilme)
       console.log(novoFilme)
+      window.location.href = './index.html'
+
       }else{
           novoFilme = {
               nome: nomeI,
@@ -47,11 +49,18 @@ function cadastrar(){
       
             postFilme(novoFilme)
           console.log(novoFilme)
+          window.location.href = './index.html'
+
       }
+
    } catch (error) {
     console.log(error)
    }
 }
+
+const botao = document.getElementById('criar')
+
+botao.addEventListener('click', cadastrar)
 
 // const transformarData = (data) =>{
 //     let dataR = data
