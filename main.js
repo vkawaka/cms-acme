@@ -60,10 +60,10 @@ const createSpace = (filme) =>{
 const editarFilme = async(id) =>{
 
     const dadosFilme = await getFilme(id)
-    console.log(dadosFilme);
 
     const form = document.getElementById('form')
     form.classList.remove('hidden')
+    const botao = document.getElementById('editar')
     const nomeI = document.getElementById('nome')
     const sinopseI = document.getElementById('sinopse')
     const duracaoI = document.getElementById('duracao')
@@ -73,50 +73,68 @@ const editarFilme = async(id) =>{
     const midiaI = document.getElementById('midia')
     const valorI = document.getElementById('valor')
 
+    const duracao = dadosFilme.duracao.split('T')
     nomeI.value = dadosFilme.nome
     sinopseI.value = dadosFilme.sinopse
+    duracaoI.value = duracao[1].substring(0, 8)
+    lanca.value = dadosFilme.data_lancamento
+    relanca.value = dadosFilme.data_relancamento
+    fotoI.value =  dadosFilme.foto_capa
+    midiaI.value = dadosFilme.midia_fundo
+    valorI.value = dadosFilme.valor_unitario
 
 
     let novoFilme
-   try {
-    if(relanca == '' || relanca == null || relanca == undefined){  
-        novoFilme = {
-          nome: nomeI,
-          sinopse: sinopseI,
-          duracao: duracaoI,
-          data_lancamento: lanca,
-          data_relancamento: null,
-          foto_capa: fotoI,
-          midia_fundo: midiaI,
-          valor_unitario: valorI
-        }
-  
-        postFilme(novoFilme)
-      console.log(novoFilme)
-      window.location.replace('./index.html')
+
+    botao.addEventListener('click', async()=>{
 
 
-      }else{
-          novoFilme = {
-              nome: nomeI,
-              sinopse: sinopseI,
-              duracao: duracaoI,
-              data_lancamento: lanca,
-              data_relancamento: relanca,
-              foto_capa: fotoI,
-              midia_fundo: midiaI,
-              valor_unitario: valorI
-            }
-      
-            postFilme(novoFilme)
-          console.log(novoFilme)
-          window.location.replace('./index.html')
+            const nomeE = nomeI.value
+            const sinopseE = sinopseI.value
+            const duracaoE = duracaoI.value
+            const lancaE = lanca.value
+            const relancaE = relanca.value
+            const fotoE = fotoI.value
+            const midiaE = midiaI.value
+            const valorE = valorI.value
+        
+            if(relancaE == '' || relancaE == null || relancaE == undefined){  
+                novoFilme = {
+                  nome: nomeE,
+                  sinopse: sinopseE,
+                  duracao: duracaoE,
+                  data_lancamento: lancaE,
+                  data_relancamento: null,
+                  foto_capa: fotoE,
+                  midia_fundo: midiaE,
+                  valor_unitario: valorE
+                }
+                console.log(novoFilme)
 
-      }
+                const teste = await putFilme(id, novoFilme)
+                    console.log(teste);
+                
+                
+              }else{
+                  novoFilme = {
+                      nome: nomeE,
+                      sinopse: sinopseE,
+                      duracao: duracaoE,
+                      data_lancamento: lancaE,
+                      data_relancamento: relancaE,
+                      foto_capa: fotoE,
+                      midia_fundo: midiaE,
+                      valor_unitario: valorE
+                    }
+        
+                console.log(novoFilme)
 
-   } catch (error) {
-    console.log(error)
-   }
+                const teste = await putFilme(id, novoFilme)
+                    console.log(teste);
+        
+              }
+        
+    })
 }
 
 async function preencherTela(){
