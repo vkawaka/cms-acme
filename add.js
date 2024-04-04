@@ -3,7 +3,7 @@
 import {postFilme} from "./filmes.js"
 
 
-function cadastrar(){
+function cadastrar(){ 
     const nomeI = document.getElementById('nome').value
     const sinopseI = document.getElementById('sinopse').value
     const duracaoI = document.getElementById('duracao').value
@@ -33,7 +33,8 @@ function cadastrar(){
   
         postFilme(novoFilme)
       console.log(novoFilme)
-      window.location.href = './index.html'
+      window.location.replace('./index.html')
+
 
       }else{
           novoFilme = {
@@ -49,7 +50,7 @@ function cadastrar(){
       
             postFilme(novoFilme)
           console.log(novoFilme)
-          window.location.href = './index.html'
+          window.location.replace('./index.html')
 
       }
 
@@ -61,15 +62,3 @@ function cadastrar(){
 const botao = document.getElementById('criar')
 
 botao.addEventListener('click', cadastrar)
-
-// const transformarData = (data) =>{
-//     let dataR = data
-
-//     let dataArray = dataR.split('/')
-
-//     let dataC = `${dataArray[2]}-${dataArray[1]}-${dataArray[0]}`
-
-//     return dataC
-// }
-
-// window.location.href = '../login/index.html'
