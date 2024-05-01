@@ -1,38 +1,37 @@
 'use strict'
 
-export async function getFilmes(){
-    const url = 'http://localhost:8080/v2/acmefilmes/filmes'
+export async function getAdms(){
+    const url = 'http://localhost:8080/v2/acmefilmes/adm'
+    const response = await fetch(url)
+    const data = await response.json()
+    return data.administrador
+}
+
+export async function getAdm(id){
+    const url = `http://localhost:8080/v2/acmefilmes/adm/${id}`
     const response = await fetch(url)
     const data = await response.json()
 
-    return data.filmes
+    return data.adm[0]
 }
 
-export async function getFilme(id){
-    const url = `http://localhost:8080/v2/acmefilmes/filmeId/${id}`
-    const response = await fetch(url)
-    const data = await response.json()
-
-    return data.filme[0]
-}
-
-export async function postFilme(filme){
-    const url = 'http://localhost:8080/v2/acmefilmes/filme'
+export async function postAdm(adm){
+    const url = 'http://localhost:8080/v2/acmefilmes/adm'
     const options = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(filme)
+        body: JSON.stringify(adm)
     }
     const response = await fetch(url, options)
     return response.ok
 }
 
-export async function putFilme(id, filme){
+export async function putAdm(id, adm){
 
-    console.log(id, filme);
-    const url = `http://localhost:8080/v2/acmefilmes/filme/${id}`
+    console.log(id, adm);
+    const url = `http://localhost:8080/v2/acmefilmes/adm/${id}`
     const options = {
         method: 'PUT',
         headers: {
@@ -44,8 +43,8 @@ export async function putFilme(id, filme){
     return response.ok
 }
 
-export async function deleteFilme(id){
-    const url = `http://localhost:8080/v2/acmefilmes/filme/${id}`
+export async function deleteAdm(id){
+    const url = `http://localhost:8080/v2/acmefilmes/adm/${id}`
     const options = {
         method: 'DELETE'
     }

@@ -4,109 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./main.js" type="module" defer></script>
+    <script src="./js/login.js" type="module" defer></script>
     <title>ACME</title>
 </head>
-<body class="w-screen">
-    <header class="bg-sky-800 w-full h-[100px] fixed">
-        <img src="Logo 1.svg" alt="" class="w-1/6 pt-8 pb-8 pl-16">
-        <button> <a href="./add-filme.html"> Adicionar Filme</a> </button>
-    </header>
-    <main class="w-full flex items-center justify-center pt-[200px] ">
-       <table id="table" style="width: 80%;">
-            <tr>
-                <th style="width: 10px;">id</th>
-                <th>nome</th>
-                <th>preço</th>
-                <th>editar</th>
-                <th>deletar</th>
-            </tr>  
-       </table>
-       <form class="z-10 bg-sky-800 absolute w-[700px] min-h-[500px] flex flex-col gap-2 items-center justify-center top-1/4 text-white " id="form">
-        <div class="flex flex-col items-center gap-2">
-            <div class="w-full flex gap-[32px]"><label>Nome do Filme</label> <input class="bg-transparent border-white border-2 rounded-lg" type="text" id="nome" required></div>
-            <div class="w-full flex justify-between"><label>Sinopse do filme</label> <textarea class="bg-transparent border-white border-2 rounded-lg" name="sinopse" id="sinopse" cols="50" rows="5"></textarea></div>
-            <div class="w-full flex gap-[32px]"><label>Duração</label> <input class="bg-transparent border-white border-2 rounded-lg" type="text" id="duracao" placeholder="Ex. : 01:28:00" required></div>
-            <div class="w-full flex gap-[32px]"><label>Lançamento</label> <input class="bg-transparent border-white border-2 rounded-lg" type="date" id="lancamento" required></div>
-            <div class="w-full flex gap-[32px]"><label>Relançamento</label> <input class="bg-transparent border-white border-2 rounded-lg" type="date" id="relancamento"></div>
-            <div class="w-full flex gap-[32px]"><label>Capa</label> <input class="bg-transparent border-white border-2 rounded-lg" type="text" id="foto" required></div>
-            <div class="w-full flex gap-[32px]"><label>Mídia do fundo</label><input class="bg-transparent border-white border-2 rounded-lg" type="text" id="midia" required></div>
-            <div class="w-full flex gap-[32px]"><label>Valor</label> <input class="bg-transparent border-white border-2 rounded-lg" type="number" id="valor" required></div>
-        </div>
-        <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown search <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-          </svg></button>
-        
-        <!-- Dropdown menu -->
-        <div id="dropdownSearch" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
-            <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownSearchButton">
-              <li>
-                <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <input id="checkbox-item-11" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                  <label for="checkbox-item-11" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Bonnie Green</label>
-                </div>
-              </li>
-              <li>
-                <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                    <input checked id="checkbox-item-12" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                    <label for="checkbox-item-12" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Jese Leos</label>
-                  </div>
-              </li>
-              <li>
-                <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <input id="checkbox-item-13" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                  <label for="checkbox-item-13" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Michael Gough</label>
-                </div>
-              </li>
-              <li>
-                <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <input id="checkbox-item-14" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                  <label for="checkbox-item-14" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Robert Wall</label>
-                </div>
-              </li>
-              <li>
-                <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <input id="checkbox-item-15" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                  <label for="checkbox-item-15" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Joseph Mcfall</label>
-                </div>
-              </li>
-              <li>
-                <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <input id="checkbox-item-16" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                  <label for="checkbox-item-16" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Leslie Livingston</label>
-                </div>
-              </li>
-                    <li>
-                <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <input id="checkbox-item-17" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                  <label for="checkbox-item-17" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Roberta Casas</label>
-                </div>
-              </li>
-            </ul>
-        </div>
-        <button id="editar" class="h-[30px] w-[200px] border-2 border-white bg-sky-400 rounded-lg">Atualizar Filme</button>
-    </form>
-    </main>
+<body>
+         <form class="login">
+  
+        <fieldset>
+          
+          <legend class="legend">Login</legend>
+          
+          <div class="input">
+            <input type="text" placeholder="Email or User" id="email" required />
+            <span><i class="fa fa-envelope-o"></i></span>
+          </div>
+          
+          <div class="input">
+            <input type="password" placeholder="Password" id="password" required />
+            <span><i class="fa fa-lock"></i></span>
+          </div>
+          
+          <button type="submit" id="button" class="submit"><i class="fa fa-long-arrow-right"></i></button>
+          
+        </fieldset>
+      </form>
 </body>
 </html>
-<script>
-    const dropdownButton = document.getElementById('dropdownSearchButton');
-    const dropdownMenu = document.getElementById('dropdownSearch');
-  
-    dropdownButton.addEventListener('click', function() {
-      if (dropdownMenu.classList.contains('hidden')) {
-        dropdownMenu.classList.remove('hidden');
-      } else {
-        dropdownMenu.classList.add('hidden');
-      }
-    });
-  </script>
 <style>
-    th, td{
-        border: 2px solid black;
-        padding: 8px;
+
+  *{
+  -ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+  background: url(https://subtlepatterns.com/patterns/sativa.png) repeat fixed;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+}
+
+ /* Start styles in form */
+
+.login{
+  position: relative;
+  top: 50%;
+	width: 250px;
+  display: table;
+  margin: -150px auto 0 auto;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.legend{
+  position: relative;
+  width: 100%;
+  display: block;
+  background: #257299;
+  padding: 15px;
+  color: #fff;
+  font-size: 20px;
+  
+  &:after{
+    content: "";
+    background-image: url(http://simpleicon.com/wp-content/uploads/multy-user.png);
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: 152px -16px;
+    opacity: 0.06;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+  }
+}
+
+.input{
+  position: relative;
+  width: 90%;
+  margin: 15px auto;
+  
+  span{
+    position: absolute;
+    display: block;
+    color: darken(#EDEDED, 10%);
+    left: 10px;
+    top: 8px;
+    font-size: 20px;
+  }
+  
+  input{
+    width: 100%;
+    padding: 10px 5px 10px 40px;
+    display: block;
+    border: 1px solid #EDEDED;
+    border-radius: 4px;
+    transition: 0.2s ease-out;
+    color: darken(#EDEDED, 30%);
+    
+    &:focus{
+      padding: 10px 5px 10px 10px;
+      outline: 0;
+      border-color: #257299;
     }
-    input:focus {
-    background-color: transparent;
-    }
+  }
+}
+
+.submit{
+  width: 45px;
+  height: 45px;
+  display: block;
+  margin: 0 auto -15px auto;
+  background: #fff;
+  border-radius: 100%;
+  border: 1px solid #257299;
+  color: #257299;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 7px #fff;
+  transition: 0.2s ease-out;
+  
+  &:hover, &:focus{
+    background: #257299;
+    color: #fff;
+    outline: 0;
+  }
+}
 </style>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/gen.js" type="module" defer></script>
+    <title>ACME</title>
+</head>
+<body class="w-screen">
+    <header class="bg-sky-800 w-full h-[100px] fixed">
+        <img src="Logo 1.svg" alt="" class="w-[200px] pt-8 pb-8 pl-16">
+        <nav>
+            <button class="a"><a href="./genero-tl.html"></a></button>
+        </nav>
+        <button> <a href="./add-filme.html"> Adicionar Filme</a> </button>
+    </header>
+    <main class="w-full flex items-center justify-center pt-[200px] ">
+       <table id="table" style="width: 80%;">
+            <tr>
+                <th style="width: 10px;">id</th>
+                <th>nome</th>
+                <th>editar</th>
+                <th>deletar</th>
+            </tr>  
+       </table>
+       <form class="z-10 bg-sky-800 absolute w-[700px] min-h-[500px] flex flex-col gap-2 items-center justify-center top-1/4 text-white hidden" id="form">
+        <div class="flex flex-col items-center gap-2">
+            <div class="w-full flex gap-[32px]"><label>Nome</label> <input class="bg-transparent border-white border-2 rounded-lg" type="text" id="nome" required></div>
+            <div class="w-full flex justify-between"><label>Descrição</label> <textarea class="bg-transparent border-white border-2 rounded-lg" name="descricao" id="descricao" cols="50" rows="5"></textarea></div>
+        </div>
+        <button id="editar" class="h-[30px] w-[200px] border-2 border-white bg-sky-400 rounded-lg">Atualizar Filme</button>
+    </form>
+    </main>
+</body>
+</html>
+<style>
+    th, td{
+        border: 2px solid black;
+        padding: 8px;
+    }
+    input:focus {
+    background-color: transparent;
+    }
+</style>
