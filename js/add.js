@@ -219,10 +219,7 @@ async function cadastrar() {
     const fotoI = document.getElementById('foto').value;
     const midiaI = document.getElementById('midia').value;
     const valorI = document.getElementById('valor').value;
-    const clasi = arrayC;
-    const atorI = arrayA;
-    const diretorI = arrayD;
-    const generoI = arrayG;
+   
 
     let novoFilme;
 
@@ -237,10 +234,10 @@ async function cadastrar() {
                 foto_capa: fotoI,
                 midia_fundo: midiaI,
                 valor_unitario: valorI,
-                genero: generoI,
-                ator: atorI,
-                diretor: diretorI,
-                id_classificacao: clasi
+                genero: arrayG,
+                ator: arrayA,
+                diretor: arrayD,
+                id_classificacao: arrayC
             };
         } else {
             novoFilme = {
@@ -252,18 +249,16 @@ async function cadastrar() {
                 foto_capa: fotoI,
                 midia_fundo: midiaI,
                 valor_unitario: valorI,
-                genero: generoI,
-                ator: atorI,
-                diretor: diretorI,
-                id_classificacao: clasi
+                genero: arrayG,
+                ator: arrayA,
+                diretor: arrayD,
+                id_classificacao: arrayC
             };
 
            
         }
         console.log(novoFilme);
-        await postFilme(novoFilme); // Espera pela conclusão da requisição POST
-        console.log("Filme cadastrado com sucesso:", novoFilme);
-        // Redirecionar ou realizar outra ação após o cadastro ser bem-sucedido
+        await postFilme(novoFilme); 
     } catch (error) {
         alert("Erro ao cadastrar filme: " + error);
     }
