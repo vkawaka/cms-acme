@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/add.js" type="module" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- class=" bg-sky-800 absolute w-screen h-screen min-h-[500px] flex flex-col gap-2 items-center justify-center top-1 text-white" -->
+    <form id="adicionar" method="post">
+        <div>
+            <div><label>Nome do Filme</label> <input type="text" id="nome" class="text-black" required></div>
+            <div><label>Sinopse do filme</label> <textarea name="sinopse" id="sinopse" cols="50" rows="5" class="text-black"></textarea>
+            <div><label>Duração</label> <input type="text" id="duracao" placeholder="Ex. : 01:28:00" class="text-black" required></div>
+            <div><label>Lançamento</label> <input type="date" id="lancamento" class="text-black" required></div>
+            <div><label>Relançamento</label> <input type="date" class="text-black" id="relancamento"></div>
+            <div><label>Capa</label> <input type="text" id="foto" class="text-black" required></div>
+            <div><label>Mídia do fundo</label> <input type="text" id="midia" class="text-black" required></div>
+            <div><label>Valor</label> <input type="number" id="valor" class="text-black" required></div>
+        </div>
+
+        <button id="classificacao" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Classificação 
+            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+        </button>
+        
+        <!-- Dropdown menu -->
+        <div id="classificacao-drop" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+            <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="classificacao" id="ulC">
+             
+            </ul>
+        </div>
+
+        <button id="ator" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">ator 
+            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+        </button>
+        
+        <!-- Dropdown menu -->
+        <div id="ator-drop" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+            <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="classificacao" id="ulA">
+              
+            </ul>
+        </div>
+
+        <button id="diretor" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Diretor 
+            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+        </button>
+        
+        <!-- Dropdown menu -->
+        <div id="diretor-drop" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+            <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="classificacao" id="ulD">
+              
+            </ul>
+        </div>
+
+        <button id="genero" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Generos 
+            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+        </button>
+        
+        <!-- Dropdown menu -->
+        <div id="genero-drop" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+            <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="classificacao" id="ulG">
+              
+            </ul>
+        </div>
+
+
+        <button id="criar">Cadastrar Filme</button>
+    </form>
+</body>
+</html>

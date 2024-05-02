@@ -11,9 +11,9 @@ button.addEventListener('click', async function() {
     const teste = await getAdms()
     teste.forEach(element => {
         if (element.email == user || element.usuario == user && element.senha == senha) {
-            document.location.href = '../filme-tl.html'
+            document.location.href = '../html/filme-tl.html'
         }
     });
 })
 
-
+console.log(await getAdms());

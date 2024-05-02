@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/at.js" type="module" defer></script>
+    <title>ACME</title>
+</head>
+<body class="w-screen">
+    <header class="bg-sky-800 w-full h-[100px] fixed">
+        <img src="../Logo 1.svg" alt="" class="w-[200px] pt-8 pb-8 pl-16">
+        <nav>
+            <button class="a"><a href="./genero-tl.html"></a></button>
+        </nav>
+        <button> <a href="./add-filme.html"> Adicionar Filme</a> </button>
+    </header>
+    <main class="w-full flex items-center justify-center pt-[200px] ">
+       <table id="table" style="width: 80%;">
+            <tr>
+                <th style="width: 10px;">id</th>
+                <th>nome</th>
+                <th>sexo</th>
+                <th>editar</th>
+                <th>deletar</th>
+            </tr>  
+       </table>
+       <form class="z-10 bg-sky-800 absolute w-[700px] min-h-[500px] flex flex-col gap-2 items-center justify-center top-1/4 text-white hidden" id="ue">
+        <div class="flex flex-col items-center gap-2">
+            <div class="w-full flex gap-[32px]"><label>nome</label> <input class="bg-transparent border-white border-2 rounded-lg" type="text" id="nome" required></div>
+            <div class="w-full flex justify-between"><label>biografia</label> <textarea class="bg-transparent border-white border-2 rounded-lg" name="descricao" id="descricao" cols="50" rows="5"></textarea></div>
+            <div class="w-full flex gap-[32px]"><label>data de nascimento</label> <input class="bg-transparent border-white border-2 rounded-lg" type="text" id="nome" required></div>
+            <button id="nacionalidade" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Nacionalidade 
+                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+              </svg>
+            </button>
+            
+            <!-- Dropdown menu -->
+            <div id="nacionalidade-drop" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+                <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="classificacao" id="ulN">
+                 
+                </ul>
+            </div>
+        </div>
+        <button id="editar" class="h-[30px] w-[200px] border-2 border-white bg-sky-400 rounded-lg">Atualizar Filme</button>
+    </form>
+    </main>
+</body>
+</html>
+<style>
+    th, td{
+        border: 2px solid black;
+        padding: 8px;
+    }
+    input:focus {
+    background-color: transparent;
+    }
+</style>

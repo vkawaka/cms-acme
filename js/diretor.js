@@ -1,51 +1,50 @@
 'use strict'
 
-export async function getAdms(){
-    const url = 'http://localhost:8080/v2/acmefilmes/adm'
+export async function getDiretores(){
+    const url = 'http://localhost:8080/v2/acmefilmes/diretor'
     const response = await fetch(url)
     const data = await response.json()
-    console.log(data);
-    return data.administrador
+    return data.diretores
 }
 
-export async function getAdm(id){
-    const url = `http://localhost:8080/v2/acmefilmes/adm/${id}`
+export async function getDiretor(id){
+    const url = `http://localhost:8080/v2/acmefilmes/diretor/${id}`
     const response = await fetch(url)
     const data = await response.json()
 
     return data.adm[0]
 }
 
-export async function postAdm(adm){
-    const url = 'http://localhost:8080/v2/acmefilmes/adm'
+export async function postDiretor(diretor){
+    const url = 'http://localhost:8080/v2/acmefilmes/diretor'
     const options = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(adm)
+        body: JSON.stringify(diretor)
     }
     const response = await fetch(url, options)
     return response.ok
 }
 
-export async function putAdm(id, adm){
+export async function putDiretor(id, diretor){
 
     console.log(id, adm);
-    const url = `http://localhost:8080/v2/acmefilmes/adm/${id}`
+    const url = `http://localhost:8080/v2/acmefilmes/diretor/${id}`
     const options = {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(adm)
+        body: JSON.stringify(diretor)
     }
     const response = await fetch(url, options)
     return response.ok
 }
 
-export async function deleteAdm(id){
-    const url = `http://localhost:8080/v2/acmefilmes/adm/${id}`
+export async function deleteDiretor(id){
+    const url = `http://localhost:8080/v2/acmefilmes/diretor/${id}`
     const options = {
         method: 'DELETE'
     }

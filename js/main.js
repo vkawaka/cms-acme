@@ -1,6 +1,6 @@
 'use strict'
 
-import { getFilmes, deleteFilme, putFilme, getFilme} from "./filmes.js"
+import { getFilmes, deleteFilme, putFilme, getFilme, postFilme} from "./filmes.js"
 
 const createSpace = (filme) =>{
     const filmeE = document.createElement('tr')
@@ -25,13 +25,13 @@ const createSpace = (filme) =>{
     const deleteBtn = document.createElement('button')
 
     const editI = document.createElement('img')
-    editI.src = './edit.png'
+    editI.src = '../edit.png'
 
     editI.classList.add('min-w-7', 'max-w-10')
     editBtn.classList.add('w-full', 'text-center')
 
     const deleteI = document.createElement('img')
-    deleteI.src = './trash.png'
+    deleteI.src = '../trash.png'
 
     deleteI.classList.add('min-w-7', 'max-w-10')
     deleteBtn.classList.add('w-full')
