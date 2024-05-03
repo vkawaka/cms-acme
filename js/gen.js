@@ -54,7 +54,7 @@ const createSpace = (genero) =>{
 }
 
 const editar = async(id) =>{
-
+    console.log(id);
     const dadosFilme = await getGenero(id)
 
     const form = document.getElementById('form')

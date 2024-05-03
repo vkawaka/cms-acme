@@ -60,6 +60,8 @@ const createSpace = (filme) =>{
 const editarFilme = async(id) =>{
 
     const dadosFilme = await getFilme(id)
+    const body = document.querySelector('body')
+    body.classList.add('relative')
 
     const form = document.getElementById('form')
     form.classList.remove('hidden')

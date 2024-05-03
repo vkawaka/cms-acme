@@ -258,7 +258,8 @@ async function cadastrar() {
            
         }
         console.log(novoFilme);
-        await postFilme(novoFilme); 
+        await postFilme(novoFilme);
+        window.location.href = '/html/filme-tl.html'
     } catch (error) {
         alert("Erro ao cadastrar filme: " + error);
     }
