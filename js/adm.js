@@ -4,7 +4,6 @@ export async function getAdms(){
     const url = 'http://localhost:8080/v2/acmefilmes/adm'
     const response = await fetch(url)
     const data = await response.json()
-    console.log(data);
     return data.administrador
 }
 
@@ -26,6 +25,7 @@ export async function postAdm(adm){
         body: JSON.stringify(adm)
     }
     const response = await fetch(url, options)
+    console.log(response);
     return response.ok
 }
 

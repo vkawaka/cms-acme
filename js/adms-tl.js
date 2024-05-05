@@ -1,9 +1,8 @@
 'use strict'
 
-import { getGeneros, getGenero, putGenero, postGenero, deleteGenero } from "./genero.js"
+import { getAdms, getAdm, putAdm, deleteAdm } from "./adm.js";
 const ulMain = document.getElementById('ul-tls')
 const adm = localStorage.getItem('chefe')
-console.log(adm);
 
 if (adm == 1) {
     const li = document.createElement('li')
@@ -18,15 +17,24 @@ if (adm == 1) {
     ulMain.append(li)
 }
 
-const createSpace = (genero) =>{
-    const generoE = document.createElement('tr')
+const createSpace = (adm) =>{
+    const admE = document.createElement('tr')
 
     const id = document.createElement('td')
-    id.textContent = genero.id
+    id.textContent = adm.id
 
     const nome = document.createElement('td')
-    nome.textContent = genero.nome
+    nome.textContent = adm.nome
     nome.classList.add('text-center')
+
+    const usuario = document.createElement('td')
+    usuario.textContent = adm.usuario
+    usuario.classList.add('text-center')
+
+    const email = document.createElement('td')
+    email.textContent = adm.email
+    email.classList.add('text-center')
+
 
     const editT = document.createElement('td')
 
@@ -53,61 +61,81 @@ const createSpace = (genero) =>{
     editT.append(editBtn)
     deleteT.append(deleteBtn)
 
-    generoE.append(id, nome, editT, deleteT)
+    admE.append(id, nome, usuario, email, editT, deleteT)
 
     deleteBtn.addEventListener('click', function() {
-        deleteGenero(genero.id)
+        deleteAdm(adm.id)
         location.reload();
     })
     editBtn.addEventListener('click', function() {
-        editar(genero.id)
+        editar(adm.id)
     })
 
-    console.log(generoE);
+    console.log(admE);
 
-    return generoE
+    return admE
     
 }
 
 const editar = async(id) =>{
     console.log(id);
-    const dadosFilme = await getGenero(id)
+    const dados = await getAdm(id)
+    console.log(dados);
+
+    const close = document.getElementById('close')
 
     const form = document.getElementById('form')
     form.classList.remove('hidden')
+    
     const botao = document.getElementById('editar')
     const nomeI = document.getElementById('nome')
-    const descricaoI = document.getElementById('descricao')
+    const usuarioI = document.getElementById('usuario')
+    const emailI = document.getElementById('email')
+    const senhaI = document.getElementById('senha')
+    const chefeI = document.getElementById('chefe')
 
 
-    nomeI.value = dadosFilme.nome
-    descricaoI.value = dadosFilme.descricao
 
-    let novoGenero
+
+    nomeI.value = dados.nome
+    usuarioI.value = dados.usuario
+    emailI.value = dados.email
+    senhaI.value = dados.senha
+    chefeI.value = dados.chefe
+
+
+
+    let novoAdm
 
     botao.addEventListener('click', async()=>{
 
 
             const nomeE = nomeI.value
-            const descricapE = descricaoI.value
+            const usuarioE = usuarioI.value
+            const emailE = emailI.value
+            const senhaE = senhaI.value
+            const chefeE = chefeI.checked
         
-                  novoGenero = {
+                  novoAdm = {
+                      usuario: usuarioE,
                       nome: nomeE,
-                      descricao: descricapE,
+                      senha: senhaE,
+                      email: emailE,
+                      chefe: chefeE
                   }
         
-                console.log(novoGenero)
-
-                const teste = await putGenero(id, novoGenero)
-                console.log(teste);
+                await putAdm(id, novoAdm)
         
+    })
+    close.addEventListener('click', function() {
+        form.classList.add('hidden')
     })
 }   
 
 async function preencherTela(){
     const table = document.getElementById('table')
 
-    const filmes = await getGeneros()
+    const filmes = await getAdms()
     
     filmes.forEach(element => {
         const card = createSpace(element)

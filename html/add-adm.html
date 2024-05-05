@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/add-adm.js" defer type="module"></script>
+    <title>Administrador</title>
+</head>
+<body>
+    <form class="bg-sky-800 w-screen h-screen flex flex-col gap-2 items-center justify-center text-white " id="form">
+        <div class="flex flex-col items-center gap-2">
+            <div class="w-full flex gap-[32px]"><label>Nome</label> <input class="bg-transparent border-white border-2 rounded-lg" type="text" id="nome" required></div>
+            <div class="w-full flex gap-[32px]"><label>usuario</label> <input class="bg-transparent border-white border-2 rounded-lg" type="text" id="usuario" required></div>
+            <div class="w-full flex gap-[32px]"><label>email</label> <input class="bg-transparent border-white border-2 rounded-lg" type="email" id="email" required></div>
+            <div class="w-full flex gap-[32px]"><label>senha</label> <input class="bg-transparent border-white border-2 rounded-lg" type="password" id="senha" required></div>
+            <div class="w-full flex gap-[32px]"><label>chefe</label> <input class="bg-transparent border-white border-2 rounded-lg" type="checkbox" id="chefe" ></div>
+        </div>
+        <button id="add" class="h-[30px] w-[200px] border-2 border-white bg-sky-400 rounded-lg">Adicionar Administrador</button>
+    </form>
+</body>
+</html>

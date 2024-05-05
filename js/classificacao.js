@@ -13,7 +13,7 @@ export async function getClassificacao(id){
     const response = await fetch(url)
     const data = await response.json()
 
-    return data.adm[0]
+    return data.classificacao[0]
 }
 
 export async function postClassificacao(classificacao){
@@ -31,7 +31,6 @@ export async function postClassificacao(classificacao){
 
 export async function putClassificacao(id, classificacao){
 
-    console.log(id, adm);
     const url = `http://localhost:8080/v2/acmefilmes/classificacao/${id}`
     const options = {
         method: 'PUT',

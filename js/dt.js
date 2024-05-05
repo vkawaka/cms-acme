@@ -8,6 +8,23 @@ const sexo = []
 const ulN = document.getElementById('ulN')
 const ulS = document.getElementById('ulS')
 
+const ulMain = document.getElementById('ul-tls')
+const adm = localStorage.getItem('chefe')
+console.log(adm);
+
+if (adm == 1) {
+    const li = document.createElement('li')
+    const button = document.createElement('button')
+    const a = document.createElement('a')
+    a.href = '../html/adms-tl.html'
+    button.classList.add('a')
+    a.textContent = "Administradores"
+    button.append(a)
+    li.append(button)
+
+    ulMain.append(li)
+}
+
 
 const createSpace = (diretor) =>{
     const diretorE = document.createElement('tr')
