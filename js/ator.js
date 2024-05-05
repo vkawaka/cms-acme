@@ -10,7 +10,7 @@ export async function getNacionalidades(){
     const url = 'http://localhost:8080/v2/acmefilmes/nacionalidade'
     const response = await fetch(url)
     const data = await response.json()
-    return data.ator
+    return data.nacionalidades
 }
 
 export async function getAtor(id){
@@ -18,7 +18,7 @@ export async function getAtor(id){
     const response = await fetch(url)
     const data = await response.json()
 
-    return data.adm[0]
+    return data.ator[0]
 }
 
 export async function postAtor(ator){
@@ -36,7 +36,7 @@ export async function postAtor(ator){
 
 export async function putAtor(id, ator){
 
-    console.log(id, adm);
+    console.log(id, ator);
     const url = `http://localhost:8080/v2/acmefilmes/ator/${id}`
     const options = {
         method: 'PUT',

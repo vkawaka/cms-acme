@@ -1,6 +1,7 @@
 'use strict'
 
-import { getAtores, getAtor, deleteAtor, putAtor, getNacionalidades } from "./ator.js"
+import { getNacionalidades } from "./ator.js"
+import { getDiretor, getDiretores, putDiretor, deleteDiretor } from "./diretor.js"
 const nacionalidades = await getNacionalidades()
 const arrayN = []
 const sexo = []
@@ -8,18 +9,18 @@ const ulN = document.getElementById('ulN')
 const ulS = document.getElementById('ulS')
 
 
-const createSpace = (ator) =>{
-    const atorE = document.createElement('tr')
+const createSpace = (diretor) =>{
+    const diretorE = document.createElement('tr')
 
     const id = document.createElement('td')
-    id.textContent = ator.id
+    id.textContent = diretor.id
 
     const nome = document.createElement('td')
-    nome.textContent = ator.nome
+    nome.textContent = diretor.nome
     nome.classList.add('text-center')
 
     const sexo = document.createElement('td')
-    sexo.textContent = ator.sexo[0].sigla
+    sexo.textContent = diretor.sexo[0].sigla
     sexo.classList.add('text-center')
 
     const editT = document.createElement('td')
@@ -47,28 +48,26 @@ const createSpace = (ator) =>{
     editT.append(editBtn)
     deleteT.append(deleteBtn)
 
-    atorE.append(id, nome, sexo, editT, deleteT)
+    diretorE.append(id, nome, sexo, editT, deleteT)
 
     deleteBtn.addEventListener('click', function() {
-        deleteAtor(ator.id)
+        console.log(diretor.id);
+        deleteDiretor(diretor.id)
         location.reload();
     })
     editBtn.addEventListener('click', function() {
-        editar(ator.id)
+        editar(diretor.id)
     })
 
-    console.log(atorE);
-
-    return atorE
+    return diretorE
     
 }
 
 const editar = async(id) =>{
-    const dados = await getAtor(id)
+    const dados = await getDiretor(id)
 
     const form = document.getElementById('ue')
     const close = document.getElementById('close')
-
     form.classList.remove('hidden')
     const botao = document.getElementById('editar')
     const nomeI = document.getElementById('nome')
@@ -146,7 +145,7 @@ let data = dados.data_nascimento.split('T')
     biografiaI.value = dados.biografia
     dataI.value = data[0]
 
-    let ator = {}
+    let diretor = {}
 
     botao.addEventListener('click', async()=>{
 
@@ -155,7 +154,7 @@ let data = dados.data_nascimento.split('T')
             const biografiaE = biografiaI.value
             const dataE = dataI.value
         
-                  ator = {
+                  diretor = {
                       nome: nomeE,
                       data_nascimento: dataE,
                       biografia: biografiaE,
@@ -164,8 +163,9 @@ let data = dados.data_nascimento.split('T')
                   }
         
 
-                  alert(ator.id_sexo)
-                const teste = await putAtor(id, ator)
+                  alert(diretor.id_sexo)
+
+                const teste = await putDiretor(id, diretor)
                 // alert(teste)
                 console.log(teste);
         
@@ -179,7 +179,7 @@ let data = dados.data_nascimento.split('T')
 async function preencherTela(){
     const table = document.getElementById('table')
 
-    const filmes = await getAtores()
+    const filmes = await getDiretores()
     
     filmes.forEach(element => {
         const card = createSpace(element)
