@@ -7,20 +7,18 @@
     <script src="../js/add.js" type="module" defer></script>
     <title>Document</title>
 </head>
-<body>
-    <!-- class=" bg-sky-800 absolute w-screen h-screen min-h-[500px] flex flex-col gap-2 items-center justify-center top-1 text-white" -->
-    <form id="adicionar" method="post">
-        <div>
-            <div><label>Nome do Filme</label> <input type="text" id="nome" class="text-black" required></div>
-            <div><label>Sinopse do filme</label> <textarea name="sinopse" id="sinopse" cols="50" rows="5" class="text-black"></textarea>
-            <div><label>Duração</label> <input type="text" id="duracao" placeholder="Ex. : 01:28:00" class="text-black" required></div>
-            <div><label>Lançamento</label> <input type="date" id="lancamento" class="text-black" required></div>
-            <div><label>Relançamento</label> <input type="date" class="text-black" id="relancamento"></div>
-            <div><label>Capa</label> <input type="text" id="foto" class="text-black" required></div>
-            <div><label>Mídia do fundo</label> <input type="text" id="midia" class="text-black" required></div>
-            <div><label>Valor</label> <input type="number" id="valor" class="text-black" required></div>
+<body class="w-screen h-screen">
+    <form id="adicionar" method="post" class="bg-sky-800 w-screen h-screen flex flex-col gap-2 items-center justify-center text-white">
+        <div class="flex flex-col">
+            <div class="w-full flex gap-[32px]"><label>Nome do Filme</label> <input type="text" id="nome" class="bg-transparent border-white border-2 rounded-lg" required></div>
+            <div class="w-full flex gap-[32px]"><label>Sinopse do filme</label> <textarea name="sinopse" id="sinopse" cols="50" rows="5" class="bg-transparent border-white border-2 rounded-lg""></textarea></div>
+            <div class="w-full flex gap-[32px]"><label>Duração</label> <input type="text" id="duracao" placeholder="Ex. : 01:28:00" class="bg-transparent border-white border-2 rounded-lg" required></div>
+            <div class="w-full flex gap-[32px]"><label>Lançamento</label> <input type="date" id="lancamento" class="bg-transparent border-white border-2 rounded-lg" required></div>
+            <div class="w-full flex gap-[32px]"><label>Relançamento</label> <input type="date" class="bg-transparent border-white border-2 rounded-lg" id="relancamento"></div>
+            <div class="w-full flex gap-[32px]"><label>Capa</label> <input type="text" id="foto" class="bg-transparent border-white border-2 rounded-lg" required></div>
+            <div class="w-full flex gap-[32px]"><label>Mídia do fundo</label> <input type="text" id="midia" class="bg-transparent border-white border-2 rounded-lg" required></div>
+            <div class="w-full flex gap-[32px]"><label>Valor</label> <input type="number" id="valor" class="bg-transparent border-white border-2 rounded-lg" required></div>
         </div>
-
         <button id="classificacao" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Classificação 
             <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>

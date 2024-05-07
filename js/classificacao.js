@@ -17,7 +17,7 @@ export async function getClassificacao(id){
 }
 
 export async function postClassificacao(classificacao){
-    const url = 'http://localhost:8080/v2/acmefilmes/clasificacao'
+    const url = 'http://localhost:8080/v2/acmefilmes/classificacao'
     const options = {
         method: 'POST',
         headers: {

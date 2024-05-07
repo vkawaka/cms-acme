@@ -75,6 +75,8 @@ const createSpace = (filme) =>{
 }
 
 const editarFilme = async(id) =>{
+    const close = document.getElementById('close')
+
 
     const dadosFilme = await getFilme(id)
     // const body = document.querySelector('body')
@@ -153,6 +155,9 @@ const editarFilme = async(id) =>{
         
               }
         
+    })
+    close.addEventListener('click', function() {
+        form.classList.add('hidden')
     })
 }
 

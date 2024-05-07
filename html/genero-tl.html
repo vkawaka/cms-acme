@@ -19,7 +19,7 @@
               <li><button class="a"><a href="./classificacao-tl.html">Classificação</a></button></li>
             </ul>
         </nav>
-        <button class="pr-[20px]"> <a href="./add-filme.html"> Adicionar Genero</a> </button>
+        <button class="pr-[20px]"> <a href="./add-genero.html"> Adicionar Genero</a> </button>
     </header>
     <main class="w-full flex items-center justify-center pt-[200px] ">
        <table id="table" style="width: 80%;">
@@ -31,6 +31,7 @@
             </tr>  
        </table>
        <form class="z-10 bg-sky-800 absolute w-[700px] min-h-[500px] flex flex-col gap-2 items-center justify-center top-1/4 text-white hidden" id="form">
+        <div class="close absolute top-[10px] right-[20px]" id="close"> <button>X</button> </div>
         <div class="flex flex-col items-center gap-2">
             <div class="w-full flex gap-[32px]"><label>Nome</label> <input class="bg-transparent border-white border-2 rounded-lg" type="text" id="nome" required></div>
             <div class="w-full flex justify-between"><label>Descrição</label> <textarea class="bg-transparent border-white border-2 rounded-lg" name="descricao" id="descricao" cols="50" rows="5"></textarea></div>
