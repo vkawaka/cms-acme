@@ -180,7 +180,6 @@ let data = dados.data_nascimento.split('T')
                   }
         
 
-                  alert(diretor.id_sexo)
 
                 const teste = await putDiretor(id, diretor)
                 // alert(teste)

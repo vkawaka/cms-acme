@@ -31,50 +31,74 @@
                 <th>deletar</th>
             </tr>  
        </table>
-       <form class="z-10 bg-sky-800 absolute w-[700px] min-h-[500px] flex flex-col gap-2 items-center justify-center top-[120px] text-white hidden" id="form">
+       <form class="z-10 bg-sky-800 absolute w-[700px] min-h-[600px] flex flex-col gap-2 items-center justify-center top-[120px] text-white hidden p-[16px]" id="form">
         <div class="close absolute top-[10px] right-[20px]" id="close"> <button>X</button> </div>
         <div class="flex flex-col items-center gap-2">
             <div class="w-full flex gap-[32px]"><label>Nome do Filme</label> <input class="bg-transparent border-white border-2 rounded-lg" type="text" id="nome" required></div>
             <div class="w-full flex justify-between"><label>Sinopse do filme</label> <textarea class="bg-transparent border-white border-2 rounded-lg" name="sinopse" id="sinopse" cols="50" rows="5"></textarea></div>
             <div class="w-full flex gap-[32px]"><label>Duração</label> <input class="bg-transparent border-white border-2 rounded-lg" type="text" id="duracao" placeholder="Ex. : 01:28:00" required></div>
-            <div class="w-full flex gap-[32px]"><label>Lançamento</label> <input class="bg-transparent border-white border-2 rounded-lg" type="date" id="lancamento" required></div>
+            <div class="w-full flex gap-[32px]"><label>Lançamento</label> <input class="bg-transparent border-white border-2 rounded-lg" name="lancamento" type="date" id="lancamento" required></div>
             <div class="w-full flex gap-[32px]"><label>Relançamento</label> <input class="bg-transparent border-white border-2 rounded-lg" type="date" id="relancamento"></div>
             <div class="w-full flex gap-[32px]"><label>Capa</label> <input class="bg-transparent border-white border-2 rounded-lg" type="text" id="foto" required></div>
             <div class="w-full flex gap-[32px]"><label>Mídia do fundo</label><input class="bg-transparent border-white border-2 rounded-lg" type="text" id="midia" required></div>
             <div class="w-full flex gap-[32px]"><label>Valor</label> <input class="bg-transparent border-white border-2 rounded-lg" type="number" id="valor" required></div>
         </div>
-        <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown search <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-          </svg></button>
-        
-        <!-- Dropdown menu -->
-        <div id="dropdownSearch" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
-            <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownSearchButton">
-              <li>
-                <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <input id="checkbox-item-11" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                  <label for="checkbox-item-11" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Bonnie Green</label>
-                </div>
-              </li>
-            </ul>
-        </div>
+        <button id="classificacao" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Classificação 
+          <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+      </button>
+      
+      <!-- Dropdown menu -->
+      <div id="classificacao-drop" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+          <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="classificacao" id="ulC">
+           
+          </ul>
+      </div>
+
+      <button id="ator" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">ator 
+          <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+      </button>
+      
+      <!-- Dropdown menu -->
+      <div id="ator-drop" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+          <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="classificacao" id="ulA">
+            
+          </ul>
+      </div>
+
+      <button id="diretor" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Diretor 
+          <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+      </button>
+      
+      <!-- Dropdown menu -->
+      <div id="diretor-drop" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+          <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="classificacao" id="ulD">
+            
+          </ul>
+      </div>
+
+      <button id="genero" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Generos 
+          <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+      </button>
+      
+      <!-- Dropdown menu -->
+      <div id="genero-drop" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+          <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="classificacao" id="ulG">
+            
+          </ul>
+      </div>
         <button id="editar" class="h-[30px] w-[200px] border-2 border-white bg-sky-400 rounded-lg">Atualizar Filme</button>
     </form>
     </main>
 </body>
 </html>
-<script>
-    const dropdownButton = document.getElementById('dropdownSearchButton');
-    const dropdownMenu = document.getElementById('dropdownSearch');
-  
-    dropdownButton.addEventListener('click', function() {
-      if (dropdownMenu.classList.contains('hidden')) {
-        dropdownMenu.classList.remove('hidden');
-      } else {
-        dropdownMenu.classList.add('hidden');
-      }
-    });
-</script>
 <style>
     th, td{
         border: 2px solid black;

@@ -180,9 +180,7 @@ let data = dados.data_nascimento.split('T')
                   }
         
 
-                  alert(ator.id_sexo)
                 const teste = await putAtor(id, ator)
-                // alert(teste)
                 console.log(teste);
         
     })

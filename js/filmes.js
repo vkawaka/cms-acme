@@ -30,7 +30,6 @@ export async function postFilme(filme){
 }
 
 export async function putFilme(id, filme){
-
     console.log(id, filme);
     const url = `http://localhost:8080/v2/acmefilmes/filme/${id}`
     const options = {
